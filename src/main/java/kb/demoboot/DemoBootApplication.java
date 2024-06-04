@@ -34,10 +34,14 @@ public class DemoBootApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        System.out.println(controller.sayHello());
 //        System.out.println(service.greeting());
-        Livre lACreer = new Livre("EPSI Montpellier","Jacques");
+        Livre lACreer = new Livre("Arc-en-ciel","Jean");
         dao.save(lACreer);
 
         dao.findAll().forEach(System.out::println);
+        dao.findByTitre("Soleil").forEach(System.out::println);
+        dao.findByAuteur("Jacques").forEach(System.out::println);
+        dao.findByTitreAndAuteur("Pluie", "Jean").forEach(System.out::println);
+        dao.findByTitreOrAuteurOrderByAuteur("Arc-en-ciel", "Jean").forEach(System.out::println);
     }
 
 }
