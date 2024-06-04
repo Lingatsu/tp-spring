@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoBootApplication implements CommandLineRunner {
+public class DemoBootApplication /*implements CommandLineRunner*/ {
 
     @Autowired
     private HelloController controller;
@@ -30,10 +30,8 @@ public class DemoBootApplication implements CommandLineRunner {
         SpringApplication.run(DemoBootApplication.class, args);
     }
 
-    @Override
+/*    @Override
     public void run(String... args) throws Exception {
-//        System.out.println(controller.sayHello());
-//        System.out.println(service.greeting());
         Livre lACreer = new Livre("Arc-en-ciel","Jean");
         dao.save(lACreer);
 
@@ -42,6 +40,6 @@ public class DemoBootApplication implements CommandLineRunner {
         dao.findByAuteur("Jacques").forEach(System.out::println);
         dao.findByTitreAndAuteur("Pluie", "Jean").forEach(System.out::println);
         dao.findByTitreOrAuteurOrderByAuteur("Arc-en-ciel", "Jean").forEach(System.out::println);
-    }
+    }*/
 
 }
